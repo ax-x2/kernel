@@ -38,7 +38,40 @@ echo " version : ${VERSION}"
 echo " jobs    : ${JOBS}"
 echo "=========================================="
 
-echo "[1/10] downloading kernel..."
+echo "[1/10] updating system, installing packages and downloading kernel..."
+
+sudo apt update
+sudo apt install -y \
+    build-essential \
+    gcc \
+    g++ \
+    make \
+    bc \
+    bison \
+    flex \
+    libssl-dev \
+    libelf-dev \
+    libncurses-dev \
+    libdw-dev \
+    dwarves \
+    zstd \
+    git \
+    fakeroot \
+    dpkg-dev \
+    debhelper \
+    debhelper-compat \
+    rsync \
+    cpio \
+    kmod \
+    wget \
+    xz-utils \
+    ca-certificates \
+    python3 \
+    perl \
+    openssl \
+    mokutil \
+    initramfs-tools
+
 wget -c "$URL"
 
 echo "[2/10] extracting kernel source..."
